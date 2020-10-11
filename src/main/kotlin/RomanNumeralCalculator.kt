@@ -4,5 +4,6 @@ fun String.addRoman(other: String): String {
 }
 
 fun String.subtractRoman(other: String): String {
-    return ""
+    val total = this.romanToInt() - other.romanToInt()
+    return total.toRomanNumeral()
 }
