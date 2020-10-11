@@ -14,4 +14,15 @@ class HelloWorldTest {
         assertEquals("M", 1000.toRomanNumeral())
     }
 
+    @Test
+    fun romanToIntTest(){
+        assertEquals(1, "I".romanToInt())
+        assertEquals(5, "V".romanToInt())
+        assertEquals(10, "X".romanToInt())
+        assertEquals(50, "L".romanToInt())
+        assertEquals(100, "C".romanToInt())
+        assertEquals(500, "D".romanToInt())
+        assertEquals(1000, "M".romanToInt())
+    }
+
 }
