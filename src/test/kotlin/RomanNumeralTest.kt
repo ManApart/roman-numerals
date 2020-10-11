@@ -36,4 +36,14 @@ class RomanNumeralTest {
         assertEquals(1600, "MDC".romanToInt())
     }
 
+    @Test
+    fun sumMultipleNumbersAsNegatives(){
+        assertEquals(4, "IV".romanToInt())
+        assertEquals(9, "IX".romanToInt())
+        assertEquals(40, "XL".romanToInt())
+        assertEquals(90, "XC".romanToInt())
+        assertEquals(400, "CD".romanToInt())
+        assertEquals(900, "CM".romanToInt())
+    }
+
 }
