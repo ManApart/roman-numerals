@@ -1,18 +1,8 @@
 import org.junit.Assert.assertEquals
 import org.junit.Test
+import java.lang.IllegalArgumentException
 
-class RomanNumeralTest {
-
-    @Test
-    fun toRomanNumeralTest(){
-        assertEquals("I", 1.toRomanNumeral())
-        assertEquals("V", 5.toRomanNumeral())
-        assertEquals("X", 10.toRomanNumeral())
-        assertEquals("L", 50.toRomanNumeral())
-        assertEquals("C", 100.toRomanNumeral())
-        assertEquals("D", 500.toRomanNumeral())
-        assertEquals("M", 1000.toRomanNumeral())
-    }
+class FromRomanTest {
 
     @Test
     fun romanToIntTest(){
@@ -29,7 +19,7 @@ class RomanNumeralTest {
     fun sumMultipleNumbers(){
         assertEquals(2, "II".romanToInt())
         assertEquals(6, "VI".romanToInt())
-        assertEquals(40, "XXXX".romanToInt())
+        assertEquals(30, "XXX".romanToInt())
         assertEquals(60, "LX".romanToInt())
         assertEquals(200, "CC".romanToInt())
         assertEquals(600, "DC".romanToInt())
@@ -46,4 +36,9 @@ class RomanNumeralTest {
         assertEquals(900, "CM".romanToInt())
     }
 
+    @Test(expected = IllegalArgumentException::class)
+    fun nonRomanNumeralThrowsError() {
+        "A".romanToInt()
+    }
+    
 }
