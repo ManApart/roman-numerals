@@ -20,16 +20,16 @@ class ToRomanTest {
         (-1).toRomanNumeral()
     }
 
-//    @Test
-//    fun sumMultipleNumbersToRoman(){
-//        assertEquals("II", 2.toRomanNumeral())
-//        assertEquals("VI", 6.toRomanNumeral())
-//        assertEquals("XXX", 30.toRomanNumeral())
-//        assertEquals("LX", 60.toRomanNumeral())
-//        assertEquals("CC", 200.toRomanNumeral())
-//        assertEquals("DC", 600.toRomanNumeral())
-//        assertEquals("MDC", 1600.toRomanNumeral())
-//    }
+    @Test
+    fun sumMultipleNumbersToRoman(){
+        assertEquals("II", 2.toRomanNumeral())
+        assertEquals("VI", 6.toRomanNumeral())
+        assertEquals("XXX", 30.toRomanNumeral())
+        assertEquals("LX", 60.toRomanNumeral())
+        assertEquals("CC", 200.toRomanNumeral())
+        assertEquals("DC", 600.toRomanNumeral())
+        assertEquals("MDC", 1600.toRomanNumeral())
+    }
 
 
 }
