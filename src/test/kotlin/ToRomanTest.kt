@@ -31,5 +31,15 @@ class ToRomanTest {
         assertEquals("MDC", 1600.toRomanNumeral())
     }
 
+    @Test
+    fun sumNegativeNumbersToRoman(){
+        assertEquals("IV", 4.toRomanNumeral())
+        assertEquals("IX", 9.toRomanNumeral())
+        assertEquals("XL", 40.toRomanNumeral())
+        assertEquals("XC", 90.toRomanNumeral())
+        assertEquals("CD", 400.toRomanNumeral())
+        assertEquals("CM", 900.toRomanNumeral())
+    }
+
 
 }

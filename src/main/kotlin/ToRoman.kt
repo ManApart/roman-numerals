@@ -7,7 +7,11 @@ fun Int.toRomanNumeral(): String {
     while (total > 0) {
         val next = getLargestNumeral(total)
         if (next != null) {
-            result += next.roman
+            if (isRepeatedNumeral(result, next)) {
+                result = replaceRepeated(result, next)
+            } else {
+                result += next.roman
+            }
             total -= next.number
         } else {
             total = 0
@@ -25,4 +29,14 @@ private fun getLargestNumeral(number: Int): Numeral? {
     return Numeral.values()
         .filter { it.number <= number }
         .maxByOrNull { it.number }
+}
+
+private fun isRepeatedNumeral(result: String, next: Numeral): Boolean {
+    val search = "${next.roman}${next.roman}${next.roman}"
+    return result.endsWith(search)
+}
+
+fun replaceRepeated(result: String, next: Numeral): String {
+    val highest = result.toCharArray().map { fromChar(it) }.maxByOrNull { it.number }!!
+    return "${next.roman}${highest.getHigher().roman}"
 }

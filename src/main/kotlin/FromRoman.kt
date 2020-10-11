@@ -23,5 +23,5 @@ private fun isNextGreater(chars: CharArray, i: Int): Boolean {
 }
 
 fun Char.romanToInt(): Int {
-    return Numeral.values().firstOrNull { this == it.roman }?.number ?: throw IllegalArgumentException("$this is not a roman numeral")
+    return fromChar(this).number
 }
