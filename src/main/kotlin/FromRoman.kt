@@ -1,3 +1,5 @@
+import java.lang.IllegalArgumentException
+
 fun String.romanToInt(): Int {
     val chars = this.toCharArray()
     var total = 0
@@ -21,13 +23,5 @@ private fun isNextGreater(chars: CharArray, i: Int): Boolean {
 }
 
 fun Char.romanToInt(): Int {
-    return when (this) {
-        'I' -> 1
-        'V' -> 5
-        'X' -> 10
-        'L' -> 50
-        'C' -> 100
-        'D' -> 500
-        else -> 1000
-    }
+    return Numeral.values().firstOrNull { this == it.roman }?.number ?: throw IllegalArgumentException("$this is not a roman numeral")
 }

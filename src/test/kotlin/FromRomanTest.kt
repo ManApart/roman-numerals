@@ -1,5 +1,6 @@
 import org.junit.Assert.assertEquals
 import org.junit.Test
+import java.lang.IllegalArgumentException
 
 class FromRomanTest {
 
@@ -33,6 +34,11 @@ class FromRomanTest {
         assertEquals(90, "XC".romanToInt())
         assertEquals(400, "CD".romanToInt())
         assertEquals(900, "CM".romanToInt())
+    }
+
+    @Test(expected = IllegalArgumentException::class)
+    fun nonRomanNumeralThrowsError() {
+        "A".romanToInt()
     }
     
 }

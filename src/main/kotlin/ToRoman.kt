@@ -1,13 +1,10 @@
+import java.lang.IllegalArgumentException
+
 fun Int.toRomanNumeral(): String {
-    return when (this) {
-        1 -> "I"
-        5 -> "V"
-        10 -> "X"
-        50 -> "L"
-        100 -> "C"
-        500 -> "D"
-        else -> "M"
-    }
+    val converted = Numeral.values().firstOrNull { it.number == this }?.roman ?: throw IllegalArgumentException("Could not translate $this to a number.")
+    return converted.toString()
 }
 
-//private fun
+private fun getLargestNumeral() {
+
+}
