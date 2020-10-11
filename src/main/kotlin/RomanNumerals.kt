@@ -16,13 +16,17 @@ fun Int.toRomanNumeral() : String {
 }
 
 fun String.romanToInt() : Int {
+    return this.toCharArray().sumBy { it.romanToInt() }
+}
+
+fun Char.romanToInt() : Int {
     return when (this){
-        "I" -> 1
-        "V" -> 5
-        "X" -> 10
-        "L" -> 50
-        "C" -> 100
-        "D" -> 500
+        'I' -> 1
+        'V' -> 5
+        'X' -> 10
+        'L' -> 50
+        'C' -> 100
+        'D' -> 500
         else -> 1000
     }
 }
